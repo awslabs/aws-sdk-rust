@@ -31,7 +31,6 @@ Thank you for your contributions! ❤
 - @jacco (aws-sdk-rust#254, smithy-rs#670)
 - @kiiadi (smithy-rs#1021)
 
-
 v0.3.0 (December 15th, 2021)
 ============================
 **Breaking Changes:**
@@ -62,13 +61,10 @@ v0.3.0 (December 15th, 2021)
 - (smithy-rs#920) Fix typos in module documentation for generated crates
 - 🐛 (aws-sdk-rust#301, smithy-rs#892) Avoid serializing repetitive `xmlns` attributes when serializing XML. This reduces the length of serialized requests and should improve compatibility with localstack.
 - 🐛 (smithy-rs#953, aws-sdk-rust#331) Fixed a bug where certain characters caused a panic during URI encoding.
-- 🐛 (smithy-rs#957) Include non-service-specific examples in the root Cargo workspace so that they can build
-- 🐛 (smithy-rs#979) Make `aws-smithy-client` a required dependency in generated services.
 
 **Contributors**
 Thank you for your contributions! ❤
 - @a-xp (smithy-rs#949)
-
 
 v0.2.0 (December 2nd, 2021)
 ===========================
@@ -77,6 +73,7 @@ v0.2.0 (December 2nd, 2021)
 
 v0.1.0 (December 2nd, 2021)
 ===========================
+
 **New this release**
 - Add docs.rs metadata section to all crates to document all features
 - [Added a new example showing how to set all currently supported timeouts](./examples/setting_timeouts/src/main.rs)
@@ -85,13 +82,6 @@ v0.1.0 (December 2nd, 2021)
 
 v0.0.26-alpha (November 23rd, 2021)
 ===================================
-
-**New this release**
-- :tada: Timeouts for requests are now configurable. You can set a timeout for each individual request attempt or for all attempts made for a request. (smithy-rs#831)
-  - `SdkError` now includes a variant `TimeoutError` for when a request times out  (smithy-rs#885)
-- Improve docs on `aws-smithy-client` (smithy-rs#855)
-- Fix http-body dependency version (smithy-rs#883, aws-sdk-rust#305)
-
 
 **Breaking Changes**
 - `RetryConfigBuilder::merge_with` has been renamed to `RetryConfigBuilder::take_unset_from`
