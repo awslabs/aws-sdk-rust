@@ -1,5 +1,6 @@
 on:
   workflow_dispatch:
+  pull_request:
   schedule:
     # Run at the top of the hour, every hour
     - cron:  '0 * * * *'
@@ -23,14 +24,12 @@ jobs:
         token: ${{ secrets.AWS_SDK_RUST_CI_PAT }}
         ref: ${{ env.sync_to_branch }}
         path: aws-sdk-rust
-        fetch-depth: 0
     - name: checkout smithy-rs
       uses: actions/checkout@v2
       with:
         repository: awslabs/smithy-rs
         ref: ${{ env.sync_from_branch }}
         path: smithy-rs
-        fetch-depth: 0
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
@@ -39,9 +38,6 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: ${{ env.java_version }}
-    - name: fetch aws-sdk-rust
-      working-directory: aws-sdk-rust
-      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin ${{ env.sync_to_branch }}
     - name: fetch smithy-rs
       working-directory: smithy-rs
       run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin ${{ env.sync_from_branch }}
@@ -52,7 +48,7 @@ jobs:
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust \
           --branch ${{ env.sync_to_branch }} \
-          --max-commits-to-sync 5
+          --max-commits-to-sync 1
     - name: push commits
       working-directory: aws-sdk-rust
       run: |
