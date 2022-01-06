@@ -20,6 +20,7 @@ jobs:
     - name: checkout aws-sdk-rust
       uses: actions/checkout@v2
       with:
+        token: ${{ secrets.AWS_SDK_RUST_CI_PAT }}
         ref: ${{ env.sync_to_branch }}
         path: aws-sdk-rust
         fetch-depth: 0
@@ -57,5 +58,4 @@ jobs:
       run: |
         git config --global user.name "AWS SDK Rust Bot"
         git config --global user.email "aws-sdk-rust-primary@amazon.com"
-        git remote add gh-token "https://${{ secrets.GH_TOKEN }}@github.com/:user/:repo.git"
         git push
