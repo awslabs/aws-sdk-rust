@@ -4,10 +4,6 @@ name = "apigateway-code-examples"
 version = "0.1.0"
 edition = "2018"
 publish = false
-
-[dependencies]
-tracing-subscriber = "0.2.18"
-
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
 version = "0.3.0"
@@ -28,3 +24,7 @@ features = ["full"]
 [dependencies.structopt]
 version = "0.3"
 default-features = false
+
+[dependencies.tracing-subscriber]
+version = "0.3.5"
+features = ["env-filter"]

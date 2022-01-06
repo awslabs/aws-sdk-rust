@@ -52,8 +52,8 @@ version = "1"
 features = ["macros", "rt", "rt-multi-thread", "test-util"]
 
 [dev-dependencies.tracing-subscriber]
-version = "0.2.16"
-features = ["fmt"]
+version = "0.3.5"
+features = ["env-filter"]
 
 [dev-dependencies.serde]
 version = "1"

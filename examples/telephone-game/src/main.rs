@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use anyhow::{bail, Context};
+use anyhow::{anyhow, bail, Context};
 use aws_sdk_polly::model::{Engine, OutputFormat, VoiceId};
 use aws_sdk_transcribe::model::{LanguageCode, Media, MediaFormat};
 use clap::{crate_authors, crate_description, crate_name, crate_version, ArgMatches};
 use rodio::{Decoder, OutputStream, Sink};
 use std::time::Duration;
-use tempdir::TempDir;
+use tempfile::TempDir;
 use tokio::{io::AsyncWriteExt, task::spawn_blocking};
 use tracing::{debug, error, info};
 
@@ -33,7 +33,7 @@ async fn main() {
     let res = match app.get_matches().subcommand() {
         ("play", Some(matches)) => play_telephone(matches).await,
         ("polly", Some(matches)) => test_polly(matches).await,
-        _ => unreachable!(),
+        _ => Err(anyhow!("expected subcommand 'play' or 'polly'")),
     };
 
     if let Err(e) = res {
@@ -79,7 +79,7 @@ async fn test_polly(matches: &ArgMatches<'_>) -> anyhow::Result<()> {
     let polly_client = aws_sdk_polly::Client::new(&config);
 
     // Set up a temp directory to store audio files
-    let tmp_dir = TempDir::new("telephone-game").expect("couldn't create temp dir");
+    let tmp_dir = TempDir::new().expect("couldn't create temp dir");
     let tmp_file_path = tmp_dir.path().join("polly.mp3");
 
     // Start synthesizing speech

@@ -1028,8 +1028,17 @@ pub(crate) mod test {
             .get("/latest/metadata")
             .await
             .expect_err("240.0.0.0 will never resolve");
-        assert!(now.elapsed().unwrap() > Duration::from_secs(1));
-        assert!(now.elapsed().unwrap() < Duration::from_secs(2));
+        let time_elapsed = now.elapsed().unwrap();
+        assert!(
+            time_elapsed > Duration::from_secs(1),
+            "time_elapsed should be greater than 1s but was {:?}",
+            time_elapsed
+        );
+        assert!(
+            time_elapsed < Duration::from_secs(2),
+            "time_elapsed should be less than 2s but was {:?}",
+            time_elapsed
+        );
         match resp {
             ImdsError::FailedToLoadToken(err) if format!("{}", err).contains("timeout") => {} // ok,
             other => panic!(

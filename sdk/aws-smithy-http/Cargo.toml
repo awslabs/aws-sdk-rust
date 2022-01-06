@@ -25,7 +25,7 @@ http-body = "0.4.4"
 percent-encoding = "2.1.0"
 pin-project = "1"
 tracing = "0.1"
-hyper = "0.14.5"
+hyper = "0.14"
 futures-core = "0.3.14"
 
 [dependencies.aws-smithy-eventstream]
@@ -53,7 +53,7 @@ tokio-stream = "0.1.5"
 tempfile = "3.2.0"
 
 [dev-dependencies.hyper]
-version = "0.14.5"
+version = "0.14"
 features = ["stream"]
 
 [dev-dependencies.tokio]
