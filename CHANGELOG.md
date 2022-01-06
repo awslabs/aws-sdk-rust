@@ -10,7 +10,6 @@
 - ⚠ (smithy-rs#1017, smithy-rs#930) Simplify features in aws-config. All features have been removed from `aws-config` with the exception of: `rt-tokio`, `rustls` and `native-tls`. All other features are now included by default. If you depended on those features specifically, remove them from your features listing.
 
 **New this release:**
-- :warning: MSRV increased from 1.54.0 to 1.55.0 per our 2-behind MSRV policy.
 - 🎉 (aws-sdk-rust#47, smithy-rs#1006) Add support for paginators! Paginated APIs now include `.into_paginator()` and (when supported) `.into_paginator().items()` to enable paginating responses automatically. The paginator API should be considered in preview and is subject to change pending customer feedback.
 - (smithy-rs#712) We removed an example 'telephone-game' that was problematic for our CI.
     The APIs that that example demonstrated are also demonstrated by our Polly

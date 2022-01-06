@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   pull_request:
 env:
-  tool_rust_version: 1.57.0
+  tool_rust_version: 1.56.1
 
 jobs:
   generate-canary-matrix:
@@ -25,7 +25,7 @@ jobs:
         run: |
           cd tools/ci/canary-runner
           cargo build
-          echo "::set-output name=matrix::$(cargo run -- generate-matrix --sdk-versions 3 --rust-versions 1.55.0 1.57.0)"
+          echo "::set-output name=matrix::$(cargo run -- generate-matrix --sdk-versions 3 --rust-versions 1.54.0 1.56.1)"
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
 
