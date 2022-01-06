@@ -10,17 +10,17 @@
 
 /.cargo/
 /.github/
+/.git/
 /tools/
 
 # Files
 
 /_config.yml
 /.gitignore
-/.handwritten_files
+/.handwritten
 /CHANGELOG.md
 /CODE_OF_CONDUCT.md
 /CODEOWNERS
 /CONTRIBUTING.md
 /LICENSE
-/NOTICE
 /README.md
