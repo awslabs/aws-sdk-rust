@@ -31,5 +31,5 @@ jobs:
           # determine the local time of the current platform.
           --ignore RUSTSEC-2020-0071 \
           --ignore RUSTSEC-2020-0159 \
-          # Criterion is only used to run benchmarks during CI
+          # serde_cbor is being imported by criterion, a benchmarking crate. More info here https://github.com/awslabs/smithy-rs/issues/1044
           --ignore RUSTSEC-2021-0127
