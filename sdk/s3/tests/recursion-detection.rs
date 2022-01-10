@@ -10,7 +10,7 @@ use http::HeaderValue;
 #[tokio::test]
 async fn recursion_detection_applied() {
     std::env::set_var("AWS_LAMBDA_FUNCTION_NAME", "some-function");
-    std::env::set_var("_X_AMZ_TRACE_ID", "traceid");
+    std::env::set_var("_X_AMZN_TRACE_ID", "traceid");
     let (conn, captured_request) = capture_request(None);
 
     let creds = Credentials::new(

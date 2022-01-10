@@ -13,7 +13,7 @@ use std::borrow::Cow;
 
 /// Recursion Detection Middleware
 ///
-/// This middleware inspects the value of the `AWS_LAMBDA_FUNCTION_NAME` and `_X_AMZ_TRACE_ID` environment
+/// This middleware inspects the value of the `AWS_LAMBDA_FUNCTION_NAME` and `_X_AMZN_TRACE_ID` environment
 /// variables to detect if the request is being invoked in a lambda function. If it is, the `X-Amzn-Trace-Id` header
 /// will be set. This enables downstream services to prevent accidentally infinitely recursive invocations spawned
 /// from lambda.
@@ -45,7 +45,7 @@ const TRACE_ID_HEADER: &str = "x-amzn-trace-id";
 
 mod env {
     pub(super) const LAMBDA_FUNCTION_NAME: &str = "AWS_LAMBDA_FUNCTION_NAME";
-    pub(super) const TRACE_ID: &str = "_X_AMZ_TRACE_ID";
+    pub(super) const TRACE_ID: &str = "_X_AMZN_TRACE_ID";
 }
 
 /// Set the trace id header from the request
